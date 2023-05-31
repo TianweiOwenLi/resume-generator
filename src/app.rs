@@ -1,38 +1,7 @@
 use yew::prelude::*;
 
 use crate::skill::*;
-
-#[derive(Properties, PartialEq, Clone)]
-struct HdrData {
-  name: String, 
-  website: String,
-  github: String,
-  phone: String,
-  email: String,
-}
-
-#[function_component(Hdr)]
-fn hdr(data: &HdrData) -> Html {
-  html! {
-    <div class="hdr">
-      <h3>{&data.name}</h3>
-      <div class="contacts">
-        <p>{format!("🔍 {}", data.website)}</p>
-        <p>{format!("📞 {}", data.phone)}</p>
-      </div>
-      <div class="contacts">
-        <p>
-          <img class="inline-icon" src="/imgs/github-mark.png"/> 
-          {format!("{}", data.github)}
-        </p>
-        <p>
-          <img class="inline-icon" src="../imgs/email.jpg"/> 
-          {format!("{}", data.email)}
-        </p>
-      </div>
-    </div>
-  }
-}
+use crate::hdr::*;
 
 #[function_component(App)]
 pub fn app() -> Html {
@@ -63,15 +32,23 @@ pub fn app() -> Html {
     content: vec![pl, frame, lib, sw]
   };
 
+  let hdr = HdrData {
+    name: "OWEN LI".to_string(),
+    website: Some("owen-li.com".to_string()),
+    github: Some("github.com/TianweiOwenLi".to_string()),
+    phone: "412-758-3468".to_string(),
+    email: "tianwei2@andrew.cmu.edu".to_string(),
+  };
+
   html! {
     <div class="letter">
       <div class="content" style={ format!("--margin: {}in", 0.6) }>
         <Hdr 
           name={"OWEN LI"} 
-          website={"owen-li.com"} 
-          github={"github.com/TianweiOwenLi"}
-          phone={"412-758-3468"}
-          email={"tianwei2@andrew.cmu.edu"}/>
+          website={ hdr.website }
+          github={ hdr.github }
+          phone={ hdr.phone }
+          email={ hdr.email }/>
         <div class="double-line"></div>
         <div class="columns-body">
           <div class="minor-col">

@@ -1,4 +1,6 @@
 mod app;
+
+mod hdr;
 mod skill;
 
 use app::App;
