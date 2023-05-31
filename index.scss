@@ -1,0 +1,155 @@
+html,
+
+:root {
+  --shade: #ffe2ee;
+  --subshade: #f0e3ff;
+  --url-color: darkblue;
+  --sect-hdr-color: #aa0000;
+  --fade-line-color: #ccc;
+  --fade-text-color: #666;
+  --sect-space: 10mm;
+  --vert-space: 10mm;
+  --lhs-width: 67mm;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+}
+
+/* american letter (8.5in x 11in) with custom margin width */
+
+.letter {
+  width: 8.5in;
+  height: 11in;
+  background-color: white;
+}
+
+.letter .content {
+  margin: var(--margin);
+  font-family: "Computer Modern Serif", serif;
+  height: calc(11in - 2 * var(--margin));
+  width: calc(8.5in - 2 * var(--margin));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header, name, contacts and icons, double line. */
+
+.hdr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hdr h3 {
+  margin: 0;
+  font-size: 24pt;
+  white-space: nowrap;
+}
+
+.inline-icon {
+  width: 5mm;
+  position: relative;
+  top: 1mm;
+  left: -1mm;
+}
+
+.hdr .contacts {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.hdr .contacts p {
+  margin: 0;
+  height: 100%;
+  font-size: 12pt;
+  color: var(--url-color);
+  align-items: flex-end;
+}
+
+div.double-line {
+  margin: 1mm 0 1mm 0;
+  min-height: 0.3mm;
+  width: 100%;
+  border-color: black;
+  border-width: 0.3mm 0 0.3mm 0;
+  border-style: solid;
+}
+
+h5.list-title {
+  font-size: 12pt;
+  background-color: var(--shade);
+  margin: 1mm 0 1mm 0;
+}
+
+/* handles column style */
+
+.columns-body {
+  display: flex;
+  flex-direction: row;
+  height: 100%; 
+}
+
+.columns-body div.minor-col {
+  min-width: var(--lhs-width);
+  max-width: var(--lhs-width);
+}
+
+.columns-body div.vert-space {
+  min-width: var(--vert-space);
+  max-width: var(--vert-space);
+  height: inherit;
+}
+
+.columns-body div.major-col {
+  width: 100%;
+}
+
+/* section title and body */
+
+h4 {
+  text-decoration: underline;
+  margin: 3mm 0 3mm 0;
+  font-size: 18pt;
+  font-weight: bold;
+  color: var(--sect-hdr-color);
+}
+
+div.section-body {
+  margin-bottom: var(--sect-space);
+}
+
+.section-body h5.list-title {
+  font-size: 12pt;
+  background-color: var(--shade);
+  margin: 1mm 0 1mm 0;
+}
+
+/* unordered lists with titles */
+
+.named-ul {
+  margin: 3mm 0 6mm 0;
+}
+
+.named-ul ul.double-bullets {
+  font-size: 11pt;
+  margin: 0;
+  padding-left: 7mm;
+  columns: 2;
+  list-style: disc;
+  -webkit-columns: 2;
+  -moz-columns: 2
+}
