@@ -24,6 +24,18 @@ body {
   background-color: gray;
 }
 
+/* helpers */
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
 /* american letter (8.5in x 11in) with custom margin width */
 
 .letter {
@@ -37,18 +49,11 @@ body {
   width: var(--width);
   height: var(--height);
   font-family: "Computer Modern Serif", serif;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* header, name, contacts and icons, double line. */
 
 .hdr {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -66,8 +71,6 @@ body {
 }
 
 .hdr .contacts {
-  display: flex;
-  flex-direction: column;
   white-space: nowrap;
   font-weight: bold;
 }
@@ -83,7 +86,6 @@ body {
 div.double-line {
   margin: 1mm 0 1mm 0;
   min-height: 0.3mm;
-  width: 100%;
   border-color: black;
   border-width: 0.3mm 0 0.3mm 0;
   border-style: solid;
@@ -98,8 +100,6 @@ h5.list-title {
 /* handles column style */
 
 .columns-body {
-  display: flex;
-  flex-direction: row;
   height: 100%; 
 }
 
@@ -111,11 +111,6 @@ h5.list-title {
 .columns-body div.vert-space {
   min-width: var(--vert-space);
   max-width: var(--vert-space);
-  height: inherit;
-}
-
-.columns-body div.major-col {
-  width: 100%;
 }
 
 /* section title and body */

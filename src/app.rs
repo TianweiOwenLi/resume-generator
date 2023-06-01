@@ -61,17 +61,20 @@ pub fn app() -> Html {
 
   html! {
     <div class="letter" style={letter_outer}>
-      <div class="content" style={letter_inner}>
+      <div class="content flexcol" style={letter_inner}>
         <Hdr name={"OWEN LI"} website={hdr.website} github={hdr.github}
           phone={hdr.phone} email={hdr.email}/>
         <div class="double-line"></div>
-        <div class="columns-body">
+        <div class="columns-body flexrow">
           <div class="minor-col">
             <SkillsVec content={sk.content}/>
             <EduVec content={edus.content}/>
           </div>
           <div class="vert-space"></div>
-          <div class="major-col">
+          <div class="hfill">
+            <div class="major-col">
+              <h4>{"lorem ipsum xxx aaa bbb ccc ddd eee"}</h4>
+            </div>
           </div>
         </div>
       </div>

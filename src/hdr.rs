@@ -42,13 +42,13 @@ pub fn Hdr(data: &HdrProp) -> Html {
   };
 
   html! {
-    <div class="hdr">
+    <div class="hdr flexrow">
       <h3>{&data.name}</h3>
-      <div class="contacts">
+      <div class="contacts flexcol">
         { website_html }
         { phone_html }
       </div>
-      <div class="contacts">
+      <div class="contacts flexcol">
         { github_html }
         { email_html }
       </div>
