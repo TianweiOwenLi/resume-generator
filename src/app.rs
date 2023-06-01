@@ -3,6 +3,8 @@ use yew::prelude::*;
 use crate::edu::*;
 use crate::skill::*;
 use crate::hdr::*;
+use crate::dim::*;
+
 
 #[function_component(App)]
 pub fn app() -> Html {
@@ -54,11 +56,14 @@ pub fn app() -> Html {
     content: vec![cmu]
   };
 
+  let letter_outer = Dimension::letter().to_string();
+  let letter_inner = Dimension::letter().inner_dim(0.6).to_string();
+
   html! {
-    <div class="letter">
-      <div class="content" style={ format!("--margin: {}in", 0.6) }>
-        <Hdr name={"OWEN LI"} website={ hdr.website } github={ hdr.github }
-          phone={ hdr.phone } email={ hdr.email }/>
+    <div class="letter" style={letter_outer}>
+      <div class="content" style={letter_inner}>
+        <Hdr name={"OWEN LI"} website={hdr.website} github={hdr.github}
+          phone={hdr.phone} email={hdr.email}/>
         <div class="double-line"></div>
         <div class="columns-body">
           <div class="minor-col">

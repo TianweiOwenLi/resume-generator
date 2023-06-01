@@ -27,16 +27,16 @@ body {
 /* american letter (8.5in x 11in) with custom margin width */
 
 .letter {
-  width: 8.5in;
-  height: 11in;
+  width: var(--width);
+  height: var(--height);
   background-color: white;
 }
 
 .letter .content {
   margin: var(--margin);
+  width: var(--width);
+  height: var(--height);
   font-family: "Computer Modern Serif", serif;
-  height: calc(11in - 2 * var(--margin));
-  width: calc(8.5in - 2 * var(--margin));
 
   display: flex;
   flex-direction: column;

@@ -1,5 +1,6 @@
 mod app;
 
+mod dim;
 mod hdr;
 mod skill;
 mod edu;
