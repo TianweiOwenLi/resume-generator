@@ -3,18 +3,18 @@
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq, Clone)]
-pub struct SkillsetData {
+pub struct SkillsProp {
   pub title: String,
   pub content: Vec<String>,
 }
 
 #[derive(Properties, PartialEq, Clone)]
-pub struct SkillsData {
-  pub content: Vec<SkillsetData>
+pub struct SkillsVecProp {
+  pub content: Vec<SkillsProp>
 }
 
-#[function_component(Skillset)]
-pub fn skillset(data: &SkillsetData) -> Html {
+#[function_component]
+pub fn Skills(data: &SkillsProp) -> Html {
   html! {
     <div class="named-ul">
       <h5 class="list-title">{ data.title.clone() }</h5>
@@ -27,8 +27,8 @@ pub fn skillset(data: &SkillsetData) -> Html {
   }
 }
 
-#[function_component(Skills)]
-pub fn skills(data: &SkillsData) -> Html {
+#[function_component]
+pub fn SkillsVec(data: &SkillsVecProp) -> Html {
   html! {
     <>
       <h4>{"Skills"}</h4>
@@ -36,7 +36,7 @@ pub fn skills(data: &SkillsData) -> Html {
         {
           data.content.iter().map(|item|
             html!{
-              <Skillset title={item.title.clone()} 
+              <Skills title={item.title.clone()} 
                 content={item.content.clone()}/>
             }
           ).collect::<Html>()

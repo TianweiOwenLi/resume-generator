@@ -3,7 +3,7 @@
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq, Clone)]
-pub struct HdrData {
+pub struct HdrProp {
   pub name: String, 
   pub website: Option<String>,
   pub github: Option<String>,
@@ -11,8 +11,8 @@ pub struct HdrData {
   pub email: String,
 }
 
-#[function_component(Hdr)]
-pub fn hdr(data: &HdrData) -> Html {
+#[function_component]
+pub fn Hdr(data: &HdrProp) -> Html {
   let placeholder = html! {<p>{" "}</p>};
 
   let website_html = match &data.website {

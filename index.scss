@@ -153,3 +153,69 @@ div.section-body {
   -webkit-columns: 2;
   -moz-columns: 2
 }
+
+/* section body with a left vertical line */
+
+.lined-body {
+  margin: 1mm 0 1mm 1mm;
+  padding-left: 2mm;
+  border-width: 0 0 0 0.3mm;
+  border-color: var(--fade-line-color);
+  border-style: solid;
+}
+
+.lined-body .entry {
+  padding: 2mm 0 2mm 0;
+}
+
+.lined-body h5 {
+  font-size: 12pt;
+  font-weight: normal;
+  text-decoration: underline;
+  background-color: var(--subshade);
+  margin: 0;
+}
+
+.lined-body p {
+  font-size: 11pt;
+  margin: 0;
+}
+
+.lined-body .entry ul {
+  font-size: 11pt;
+  margin: 0;
+  padding-left: 5mm;
+}
+
+/* experience header, modifier, bullet-points, and project url */
+
+p.xp-hdr {
+  font-size: 12pt;
+  background-color: var(--shade);
+  margin: 1mm 0 1mm 0;
+  width: 100%;
+}
+
+div.modifier {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.modifier p {
+  margin: 0;
+  font-size: 12pt;
+  font-style: italic;
+  color: var(--fade-text-color);
+  font-family: "Times New Roman";
+}
+
+ul.xp-list {
+  font-size: 11pt;
+  margin: 3mm 0 6mm 0;
+  padding-left: 6mm;
+}
+
+.link {
+  font-family: "Times New Roman";
+  color: var(--url-color);
+}
